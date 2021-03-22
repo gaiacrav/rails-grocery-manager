@@ -14,6 +14,7 @@
             </div>
             <div style="width: 360px">
             🔗 <%= link_to "Show", list_path(list), class:"btn btn-success"%>
+            ❌ <%= link_to "Delete list #{list.name}", lists_path(list), method: :delete, class:"btn btn-warning" %>
             <div>
           </div>
         </li>
