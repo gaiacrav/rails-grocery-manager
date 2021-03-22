@@ -6,7 +6,7 @@ class ListsController < ApplicationController
   end
 
   def show
-    @list = List.find(:id)
+    @list = List.find(params[:id])
   end
 
   def new
@@ -14,7 +14,7 @@ class ListsController < ApplicationController
   end
 
   def create
-    @list = List.create(list_params)
+    @list = List.new(list_params)
     if @list.save!
       redirect_to lists_path
     else
@@ -22,13 +22,13 @@ class ListsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
   end
 
   private
 
   def list_params
-    params.require(:list).permit(:name, :ingredient, :completed)
+    params.require(:list).permit(:name, :completed)
   end
 
 end
