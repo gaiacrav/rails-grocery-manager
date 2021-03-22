@@ -1,8 +1,12 @@
-<h1>🍎 Pick a name for your list! </h1>
-
-<%= simple_form_for(@list) do |f| %>
-  <div class="form-group my-3 mx-3 px-3">
-    <%= f.input :name, class: "form-control" %>
-    <%= f.submit class: 'btn btn-success my-3'%>
+<div class="page">
+  <div class="header">
+    <h1>🍎 Pick a name for your list! </h1>
   </div>
-<% end %>
+
+  <%= simple_form_for(@list) do |f| %>
+    <div class="form-group my-3 mx-3 px-3">
+      <%= f.input :name, class: "form-control" %>
+      <%= f.submit class: 'btn btn-success my-3'%>
+    </div>
+  <% end %>
+</div>
