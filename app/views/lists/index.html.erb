@@ -1,5 +1,14 @@
 <h1> work in progress! </h1>
 
-<% @lists.each do |list|%>
-<%= puts list %>
+<%= link_to "Create a new list now", new_list_path, class:"btn btn-success"%>
+
+<h5> Check out the ingredients available today, <%= Date.today.to_s(:long) %> </h5>
+<% @ingredients.each do |ingredient|%>
+  <ul>
+    <li>
+      <strong><%= ingredient.name.capitalize %></strong> <%= ingredient.price%>€
+    </li>
+  </ul>
 <%end%>
+
+
