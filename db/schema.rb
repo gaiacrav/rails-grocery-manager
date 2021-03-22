@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_22_162247) do
+ActiveRecord::Schema.define(version: 2021_03_22_174117) do
+
+  create_table "doses", force: :cascade do |t|
+    t.string "description"
+    t.integer "ingredient_id", null: false
+    t.integer "lists_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["ingredient_id"], name: "index_doses_on_ingredient_id"
+    t.index ["lists_id"], name: "index_doses_on_lists_id"
+  end
 
   create_table "ingredients", force: :cascade do |t|
     t.string "name"
@@ -22,11 +32,10 @@ ActiveRecord::Schema.define(version: 2021_03_22_162247) do
   create_table "lists", force: :cascade do |t|
     t.string "name"
     t.boolean "completed"
-    t.integer "ingredient_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["ingredient_id"], name: "index_lists_on_ingredient_id"
   end
 
-  add_foreign_key "lists", "ingredients"
+  add_foreign_key "doses", "ingredients"
+  add_foreign_key "doses", "lists", column: "lists_id"
 end

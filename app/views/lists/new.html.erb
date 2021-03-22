@@ -1,0 +1,16 @@
+<h1>work in super progress! </h1>
+
+<%= form_for(@list) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :ingredient %>
+  <%= f.text_field :ingredient %>
+  <%= f.label :completed %>
+
+
+  <%= f.select :completed %>
+
+
+
+  <%= f.submit "Create the list!"%>
+<%end%>
