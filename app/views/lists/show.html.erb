@@ -1,4 +1,7 @@
-<h1> Check out your: 🥕<%= @list.name%> list </h1>
+<div class="page">
+  <h1> Check out your list: 🥕<%= @list.name%> list </h1>
 
-<p> <%= link_to "Add an ingredient", new_dose_path(@list), class: "btn btn-success"%> </p>
-
+  <div id="end-page">
+    <p> <%= link_to "Add an ingredient", new_dose_path(@list), class: "btn btn-success"%> </p>
+  </div>
+</div>
