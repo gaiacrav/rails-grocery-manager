@@ -1,14 +1,27 @@
-<h1> work in progress! </h1>
+<div class="page">
+  <div class="header">
+    <p>Today is <%= Date.today.to_s(:long) %></p>
+    <h1> Welcome to your grocery list organizer! </h1>
+    <h2>You have <%= @lists.count %> active lists: </h2>
+  </div>
 
-<%= link_to "Create a new list now", new_list_path, class:"btn btn-success"%>
+    <% @lists.each do |list|%>
+      <ul>
+        <li>
+          <div id="list-name-show">
+            <div style="width: 360px">
+             🍕 <%= list.name %>
+            </div>
+            <div style="width: 360px">
+            🔗 <%= link_to "Show", list_path(list), class:"btn btn-success"%>
+            <div>
+          </div>
+        </li>
+      </ul>
+    <%end%>
 
-<h5> Check out the ingredients available today, <%= Date.today.to_s(:long) %> </h5>
-<% @ingredients.each do |ingredient|%>
-  <ul>
-    <li>
-      <strong><%= ingredient.name.capitalize %></strong> <%= ingredient.price%>€
-    </li>
-  </ul>
-<%end%>
-
+  <div id="end-page">
+    <%= link_to "Create a new list now", new_list_path, class:"btn btn-success"%>
+  </div>
+</div>
 

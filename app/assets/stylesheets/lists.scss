@@ -1,3 +1,41 @@
 // Place all the styles related to the lists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.page{
+  margin: 0 auto;
+  margin-top: 40px;
+  width: 900px;
+  background-color: white;
+  padding: 30px;
+  border-radius: 3px;
+}
+
+.header p{
+  color: green;
+  font-weight: lighter;
+}
+
+.header h2{
+  font-size: 24px;
+  margin-bottom: 40px;
+  color: green;
+}
+
+#end-page{
+  display: flex;
+  justify-content: flex-end;
+}
+
+#list-name-show{
+  display: flex;
+}
+
+li {
+  list-style-type: none;
+}
+
+.btn:hover{
+  color:green;
+  background-color: white;
+}
