@@ -2,7 +2,7 @@ class DosesController < ApplicationController
   before_action :set_list, only: [:new, :create]
 
   def new
-    @list = List.find(params[:list_id]) #to change
+    @list = List.find(params[:list_id])
     @dose = Dose.new
   end
 

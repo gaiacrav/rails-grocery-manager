@@ -1,0 +1,9 @@
+<h4 class="my-3 mx-3 px-3"> 🍇 Add a new ingredient to your list </h4>
+
+<%= simple_form_for [@list, @dose] do |f| %>
+  <div class="my-3 mx-3 px-3">
+    <%= f.association :ingredient, class: "form-control" %>
+    <%# f.input :description, class: "form-control" %>
+    <%= f.submit class: 'btn btn-success my-3' %>
+  </div>
+<% end %>

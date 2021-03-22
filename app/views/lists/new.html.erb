@@ -1,16 +1,8 @@
-<h1>work in super progress! </h1>
+<h1>🍎 Pick a name for your list! </h1>
 
-<%= form_for(@list) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :ingredient %>
-  <%= f.text_field :ingredient %>
-  <%= f.label :completed %>
-
-
-  <%= f.select :completed %>
-
-
-
-  <%= f.submit "Create the list!"%>
-<%end%>
+<%= simple_form_for(@list) do |f| %>
+  <div class="form-group my-3 mx-3 px-3">
+    <%= f.input :name, class: "form-control" %>
+    <%= f.submit class: 'btn btn-success my-3'%>
+  </div>
+<% end %>
