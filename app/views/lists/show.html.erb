@@ -2,6 +2,7 @@
   <h1> Check out your list: 🥕<%= @list.name%> list </h1>
 
   <div id="end-page">
-    <p> <%= link_to "Add an ingredient", new_dose_path(@list), class: "btn btn-success"%> </p>
+    <%= link_to "Add an ingredient", new_dose_path(@list), class: "btn btn-success"%>
   </div>
+  <%= link_to "Back", lists_path, class:"btn btn-success"%>
 </div>
