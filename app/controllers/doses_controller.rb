@@ -1,5 +1,5 @@
 class DosesController < ApplicationController
-  before_action :set_list, only: [:new, :create]
+  #before_action :set_list, only: [:new, :create]
 
   def new
     @list = List.find(params[:list_id])
@@ -11,7 +11,7 @@ class DosesController < ApplicationController
     @dose = Dose.new(dose_params)
     @dose.list = @list
 
-    if @dose.save
+    if @dose.save!
       redirect_to list_path(@list)
     else
       render :new
@@ -32,7 +32,7 @@ class DosesController < ApplicationController
   private
 
   def dose_params
-    params.require(:dose).permit(:description, :ingredient_id)
+    params.require(:dose).permit(:ingredient_id)
   end
 
   def set_list
