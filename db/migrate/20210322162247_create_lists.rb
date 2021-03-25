@@ -3,7 +3,6 @@ class CreateLists < ActiveRecord::Migration[6.0]
     create_table :lists do |t|
       t.string :name
       t.boolean :completed
-      t.references :ingredient, null: false, foreign_key: true
 
       t.timestamps
     end
